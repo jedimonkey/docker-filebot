@@ -12,3 +12,4 @@ To run filebot, file up docker like so:
 
 It's designed to run batch or interactively.  The docker will remove it's active container (hence why it's also named, although that can easily be removed) once the running process has finished.
 
+
