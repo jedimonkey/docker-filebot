@@ -1,17 +1,9 @@
 # Ubuntu Base
-FROM ubuntu
-MAINTAINER Marcus Collier "marcus@mjcollier.id.au"
+FROM java:8
+MAINTAINER Marcus Collier "dev@mjcollier.id.au"
 
 # Install some base line functionality (php5 is used by one of my random scripts)
-RUN apt-get update && apt-get -y upgrade && apt-get install -y python-software-properties \
-	software-properties-common \
-	php5-cli
-
-# Install java 8
-RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
-RUN add-apt-repository ppa:webupd8team/java
-RUN apt-get update && apt-get install -y oracle-java8-installer
-RUN update-alternatives --display java
+RUN apt-get update && apt-get install -y php5-cli
 
 # Get filebot and install
 RUN wget -O /tmp/filebot.deb "https://www.filebot.net/download.php?mode=s&type=deb&arch=amd64"; \
