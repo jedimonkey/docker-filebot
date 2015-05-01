@@ -2,7 +2,7 @@
 FROM java:8
 MAINTAINER Marcus Collier "dev@mjcollier.id.au"
 
-# Install some base line functionality (php5 is used by one of my random scripts)
+# Install php5 (should probably make this a seperate image)
 RUN apt-get update && apt-get install -y php5-cli
 
 # Get filebot and install
