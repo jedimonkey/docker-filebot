@@ -1,4 +1,4 @@
-# Ubuntu Base
+# Java Official image base (https://registry.hub.docker.com/_/java/)
 FROM java:8
 MAINTAINER Marcus Collier "dev@mjcollier.id.au"
 
@@ -10,9 +10,7 @@ RUN wget -O /tmp/filebot.deb "https://www.filebot.net/download.php?mode=s&type=d
 	dpkg -i /tmp/filebot.deb; \
 	rm /tmp/filebot.deb;
 
-# Add main volume
-VOLUME /share
-# Add a seperate volume so filebot cache is persistent
+# Add a seperate volume so filebot cache is persistent (performance is not great otherwise)
 VOLUME /home/docker
 
 # Set up unprivileged user
